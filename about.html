@@ -1,0 +1,46 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre — vincentwl.pt</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Shared Header -->
+  <div id="site-header"></div>
+  <script>
+    fetch('/header.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('site-header').innerHTML = html);
+  </script>
+
+  <main>
+    <!-- Profile Section -->
+    <section class="about-profile">
+      <img src="/images/profile.jpg" alt="Foto de Vincent Larkin" class="profile-img">
+      <div>
+        <h2>Sobre Mim</h2>
+        <p>Olá! Sou Vincent Larkin, apaixonado por tecnologia minimalista, design retro e sistemas operativos como Plan9. Aqui partilho ideias e projetos inspirados na simplicidade.</p>
+      </div>
+    </section>
+
+    <!-- Details Section -->
+    <section class="about-details">
+      <h3>Experiência & Interesses</h3>
+      <p>Tenho trabalhado com linguagens como Go e Rust, explorando microserviços e computação de alto desempenho. Nos meus tempos livres, desenho interfaces minimalistas e escrevo sobre software livre.</p>
+      <h3>Filosofia</h3>
+      <p>Acredito que menos é mais: sistemas simples são mais robustos, fáceis de manter e encantadores para os utilizadores. A estética clara e funcional é o meu guia.</p>
+    </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
+  <script>
+    fetch('/footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
+  </script>
+</body>
+</html>
