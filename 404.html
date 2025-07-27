@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - vincentwl.pt</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <noscript>
+        <!-- For bots/curl that don't run JavaScript -->
+        <div style="font-family: monospace;">404 Not Found<br>Access Denied</div>
+    </noscript>
+    
+    <div id="human-content" style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1>404 - Page Not Found</h1>
+        <p>Sorry, the page you're looking for doesn't exist.</p>
+        <a href="/" style="color: #007bff; text-decoration: none;">← Back to Home</a>
+    </div>
+
+    <script>
+        // Detect bots/automated tools
+        const userAgent = navigator.userAgent.toLowerCase();
+        const isBotLike = !userAgent.includes('mozilla') || 
+                         userAgent.includes('curl') || 
+                         userAgent.includes('wget') || 
+                         userAgent.includes('bot') ||
+                         userAgent.includes('spider');
+        
+        if (isBotLike) {
+            document.body.innerHTML = '<pre style="font-family: monospace;">404 Not Found\nAccess Denied</pre>';
+        }
+    </script>
+</body>
+</html>
