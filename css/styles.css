@@ -1,7 +1,7 @@
 /* css/styles.css */
 
-/* Theme Toggle Button */
-.theme-btn {
+/* Theme and Language Toggle Buttons */
+.theme-btn, .lang-btn {
   background: none;
   border: none;
   color: #00bfff;
@@ -11,7 +11,6 @@
   cursor: pointer;
   text-decoration: none;
   padding: 0;
-  margin-left: auto;
   /* Mobile improvements */
   min-height: 44px;
   min-width: 44px;
@@ -22,16 +21,20 @@
   justify-content: center;
 }
 
-.theme-btn:hover {
+.theme-btn {
+  margin-left: auto;
+}
+
+.theme-btn:hover, .lang-btn:hover {
   color: #fff;
 }
 
 /* Theme button styling for different themes */
-body.theme-light .theme-btn {
+body.theme-light .theme-btn, body.theme-light .lang-btn {
   color: #007bff;
 }
 
-body.theme-light .theme-btn:hover {
+body.theme-light .theme-btn:hover, body.theme-light .lang-btn:hover {
   color: #0056b3;
 }
 

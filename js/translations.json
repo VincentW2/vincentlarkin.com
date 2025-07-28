@@ -1,0 +1,26 @@
+{
+  "index": {
+    "welcome-title": {
+      "pt": "Bem-vindo ao meu espaço",
+      "en": "Welcome to my space"
+    },
+    "intro-text": {
+      "pt": "Este é um site de exemplo, inspirado na estética minimalista do Plan9 e Bell Labs. Use o menu para navegar.",
+      "en": "This is an example site, inspired by the minimalist aesthetic of Plan9 and Bell Labs. Use the menu to navigate."
+    }
+  },
+  "nav": {
+    "nav-about": {
+      "pt": "Sobre",
+      "en": "About"
+    },
+    "nav-news": {
+      "pt": "Notícias", 
+      "en": "News"
+    },
+    "nav-contact": {
+      "pt": "Contacto",
+      "en": "Contact"
+    }
+  }
+} 
