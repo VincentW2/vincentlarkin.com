@@ -18,16 +18,20 @@ function applyLanguage(lang) {
   localStorage.setItem('lang', lang);
   document.documentElement.lang = lang;
   
+  const currentPage = getCurrentPage();
+  console.log('Current page:', currentPage, 'Language:', lang);
+  
   // Apply page translations
   const pageTranslations = translations[getCurrentPage()] || {};
   for (const [id, text] of Object.entries(pageTranslations)) {
     const element = document.getElementById(id);
     if (element) {
       // Check if text contains HTML (like links)
-      if (text[lang].includes('<')) {
+      if (text[lang] && text[lang].includes('<')) {
+        console.log('Setting HTML for', id, ':', text[lang]);
         element.innerHTML = text[lang];
       } else {
-        element.textContent = text[lang];
+        element.textContent = text[lang] || '';
       }
     }
   }

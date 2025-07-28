@@ -25,6 +25,11 @@
   margin-left: auto;
 }
 
+/* Language button specific styling */
+.lang-btn {
+  margin-left: 0.5rem;
+}
+
 .theme-btn:hover, .lang-btn:hover {
   color: #fff;
 }
