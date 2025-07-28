@@ -8,6 +8,51 @@
       <li><a href="/about.html">&gt; Sobre</a></li>
       <li><a href="/news.html">&gt; Notícias</a></li>
       <li><a href="/contact.html">&gt; Contacto</a></li>
+      <li><button id="theme-toggle" class="theme-btn">&gt; Theme</button></li>
     </ul>
   </nav>
 </header>
+
+<script>
+// Theme switching functionality
+const themes = ['theme-dark', 'theme-light', 'theme-retro'];
+let currentThemeIndex = 0;
+
+// Load saved theme or default to dark
+function loadTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    document.body.className = savedTheme;
+    currentThemeIndex = themes.indexOf(savedTheme);
+  } else {
+    document.body.className = 'theme-dark';
+  }
+}
+
+// Switch to next theme
+function switchTheme() {
+  currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+  const newTheme = themes[currentThemeIndex];
+  document.body.className = newTheme;
+  localStorage.setItem('theme', newTheme);
+  
+  // Update button text based on theme
+  const themeNames = ['Dark', 'Light', 'Retro'];
+  document.getElementById('theme-toggle').textContent = `> ${themeNames[currentThemeIndex]}`;
+}
+
+// Initialize theme
+loadTheme();
+
+// Add click handler
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', switchTheme);
+    
+    // Set initial button text
+    const themeNames = ['Dark', 'Light', 'Retro'];
+    themeToggle.textContent = `> ${themeNames[currentThemeIndex]}`;
+  }
+});
+</script>

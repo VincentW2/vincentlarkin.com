@@ -1,120 +1,331 @@
 /* css/styles.css */
+
+/* Theme Toggle Button */
+.theme-btn {
+  background: none;
+  border: none;
+  color: #00bfff;
+  font-family: 'Fira Mono', 'Courier New', monospace;
+  font-size: 1.125rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.theme-btn:hover {
+  color: #fff;
+}
+
+/* Base styles */
 html, body {
   height: 100%;
   margin: 0;
 }
+
 body {
   display: flex;
   flex-direction: column;
   font-family: 'Fira Mono', 'Courier New', monospace;
+  font-size: 18px;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+/* Dark Theme (Default) */
+body.theme-dark {
   background: repeating-linear-gradient(
     to bottom,
     #2a2a2a 0px,
     #2a2a2a 2px,
     #292929 3px,
     #292929 4px
-  ); /* subtle scanlines */
+  );
   color: #ddd;
-  font-size: 18px;
-  line-height: 1.6;
 }
-main {
-  flex: 1;
-  padding: 2rem;
-  border: 2px solid #444;
-  border-radius: 0;
+
+body.theme-dark main {
   background: #2a2a2a;
+  border: 2px solid #444;
 }
-h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-h2 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-}
-h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-p {
-  margin-bottom: 1rem;
-}
-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 1.5rem 2rem;
+
+body.theme-dark header {
   background: #1f1f1f;
   border-bottom: 3px solid #4da6ff;
   border-top: 2px solid #444;
   border-left: 2px solid #444;
   border-right: 2px solid #444;
+}
+
+body.theme-dark footer {
+  background: #1f1f1f;
+  border-top: 2px solid #444;
+  border-bottom: 2px solid #444;
+  border-left: 2px solid #444;
+  border-right: 2px solid #444;
+  color: #888;
+}
+
+body.theme-dark .news-article,
+body.theme-dark .news-article-single {
+  background: #333;
+  border: 2px solid #444;
+}
+
+body.theme-dark .about-profile {
+  background: #333;
+  border: 2px solid #444;
+}
+
+/* Light Theme */
+body.theme-light {
+  background: #ffffff;
+  color: #333;
+}
+
+body.theme-light main {
+  background: #ffffff;
+  border: 1px solid #ddd;
+}
+
+body.theme-light header {
+  background: #f8f9fa;
+  border-bottom: 2px solid #007bff;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+body.theme-light footer {
+  background: #f8f9fa;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  color: #666;
+}
+
+body.theme-light .news-article,
+body.theme-light .news-article-single {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+}
+
+body.theme-light .about-profile {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+}
+
+body.theme-light a {
+  color: #007bff;
+}
+
+body.theme-light a:hover {
+  color: #0056b3;
+}
+
+body.theme-light .site-title {
+  color: #007bff;
+}
+
+body.theme-light .site-title:hover {
+  color: #0056b3;
+}
+
+body.theme-light .news-list a {
+  color: #dc3545;
+}
+
+body.theme-light .news-list a:hover {
+  color: #c82333;
+}
+
+/* Retro Theme (Netscape-style "broken CSS") */
+body.theme-retro {
+  background: #ffffff;
+  color: #000000;
+  font-family: 'Courier New', monospace;
+}
+
+body.theme-retro main {
+  background: #ffffff;
+  border: none;
+  padding: 1rem;
+}
+
+body.theme-retro header {
+  background: #ffffff;
+  border: none;
+  padding: 1rem;
+}
+
+body.theme-retro footer {
+  background: #ffffff;
+  border: none;
+  color: #000000;
+}
+
+body.theme-retro .news-article,
+body.theme-retro .news-article-single {
+  background: #ffffff;
+  border: none;
+  padding: 0.5rem;
+}
+
+body.theme-retro .about-profile {
+  background: #ffffff;
+  border: none;
+}
+
+body.theme-retro a {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+body.theme-retro a:hover {
+  color: #000000;
+}
+
+body.theme-retro .site-title {
+  color: #000000;
+}
+
+body.theme-retro .site-title:hover {
+  color: #000000;
+}
+
+body.theme-retro .news-list a {
+  color: #0000ff;
+}
+
+body.theme-retro .news-list a:hover {
+  color: #000000;
+}
+
+body.theme-retro .theme-btn {
+  color: #0000ff;
+}
+
+body.theme-retro .theme-btn:hover {
+  color: #000000;
+}
+
+/* Common styles */
+main {
+  flex: 1;
+  padding: 2rem;
   border-radius: 0;
 }
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-radius: 0;
+}
+
 .logo {
   display: flex;
   align-items: center;
   margin-right: 2rem;
 }
+
 .logo h1 {
   margin-left: 0.5rem;
   color: #fff;
   margin: 0;
 }
+
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
 }
+
 nav li {
   margin-right: 1rem;
 }
+
 a {
   color: #00bfff;
   text-decoration: underline;
   font-size: 1.125rem;
   font-weight: bold;
 }
+
 a:hover {
   color: #fff;
   background: none;
   text-decoration: underline;
 }
+
 .news-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .news-list li {
   margin-bottom: 1rem;
 }
+
 .news-list a {
   color: #ff6b6b;
   text-decoration: none;
 }
+
 .news-list a:hover {
   text-decoration: underline;
   color: #ff8787;
 }
+
 .article-img {
   max-width: 100%;
   height: auto;
   display: block;
   margin: 1rem 0;
 }
+
 .news-article,
 .news-article-single {
-  background: #333;
-  border: 2px solid #444;
   border-radius: 0;
   margin-bottom: 1.5rem;
   padding: 1rem;
 }
+
 .news-content {
   color: #ddd;
 }
+
+body.theme-light .news-content {
+  color: #333;
+}
+
+body.theme-retro .news-content {
+  color: #000000;
+}
+
 footer {
   flex-shrink: 0;
   display: flex;
@@ -123,15 +334,10 @@ footer {
   gap: 0.5rem;
   text-align: center;
   padding: 1rem;
-  background: #1f1f1f;
-  border-top: 2px solid #444;
-  border-bottom: 2px solid #444;
-  border-left: 2px solid #444;
-  border-right: 2px solid #444;
   width: 100%;
-  color: #888;
   border-radius: 0;
 }
+
 .site-title {
   display: inline-block;
   background: none;
@@ -144,29 +350,21 @@ footer {
   margin-left: 0.5rem;
   transition: color 0.3s;
 }
+
 .site-title:hover {
   color: #fff;
   background: none;
 }
 
-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  background: #1f1f1f;
-  border-bottom: 3px solid #4da6ff;  /* accent border */
-}
 .about-profile {
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: #333;
   padding: 1.5rem;
   border-radius: 0;
-  border: 2px solid #444;
   margin-bottom: 2rem;
 }
+
 .profile-img {
   border-radius: 0;
   width: 150px;
@@ -174,6 +372,15 @@ header {
   object-fit: cover;
   border: 2px solid #4da6ff;
 }
+
+body.theme-light .profile-img {
+  border: 2px solid #007bff;
+}
+
+body.theme-retro .profile-img {
+  border: none;
+}
+
 .about-details h3 {
   margin-top: 2rem;
   font-size: 1.5rem;
