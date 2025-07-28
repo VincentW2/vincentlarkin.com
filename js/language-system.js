@@ -5,8 +5,10 @@ let translations = {};
 // Load language and content
 async function initLanguageSystem() {
   try {
+    console.log('Initializing language system...');
     const response = await fetch('/js/translations.json');
     translations = await response.json();
+    console.log('Loaded translations:', translations);
     applyLanguage(currentLang);
   } catch (error) {
     console.error('Failed to load translations:', error);
@@ -29,9 +31,11 @@ function applyLanguage(lang) {
       
       // Handle special placeholders for contact page
       if (id === 'contact-text') {
+        console.log('Processing contact-text, original content:', content);
         const emailLink = '<a href="mailto:vincent@vincentwl.pt">vincent@vincentwl.pt</a>';
         const githubLink = '<a href="https://github.com/vincentw2">GitHub</a>';
         content = content.replace('{email}', emailLink).replace('{github}', githubLink);
+        console.log('After replacement:', content);
         element.innerHTML = content;
       } else {
         element.textContent = content;
