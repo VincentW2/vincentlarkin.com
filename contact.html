@@ -75,6 +75,14 @@
   
   <!-- Language System -->
   <script src="/js/language-system.js"></script>
+  <script>
+    // Initialize language system after header is loaded
+    setTimeout(() => {
+      if (typeof initLanguageSystem === 'function') {
+        initLanguageSystem();
+      }
+    }, 100);
+  </script>
 </body>
 
 </html>

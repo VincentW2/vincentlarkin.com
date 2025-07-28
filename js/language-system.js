@@ -31,11 +31,9 @@ function applyLanguage(lang) {
       
       // Handle special placeholders for contact page
       if (id === 'contact-text') {
-        console.log('Processing contact-text, original content:', content);
         const emailLink = '<a href="mailto:vincent@vincentwl.pt">vincent@vincentwl.pt</a>';
         const githubLink = '<a href="https://github.com/vincentw2">GitHub</a>';
         content = content.replace('{email}', emailLink).replace('{github}', githubLink);
-        console.log('After replacement:', content);
         element.innerHTML = content;
       } else {
         element.textContent = content;
