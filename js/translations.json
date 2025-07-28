@@ -9,6 +9,32 @@
       "en": "This is an example site, inspired by the minimalist aesthetic of Plan9 and Bell Labs. Use the menu to navigate."
     }
   },
+  "about": {
+    "about-title": {
+      "pt": "Sobre Mim",
+      "en": "About Me"
+    },
+    "about-intro": {
+      "pt": "Olá! Sou Vincent Larkin, apaixonado por tecnologia minimalista, design retro e sistemas operativos como Plan9. Aqui partilho ideias e projetos inspirados na simplicidade.",
+      "en": "Hello! I'm Vincent Larkin, passionate about minimalist technology, retro design and operating systems like Plan9. Here I share ideas and projects inspired by simplicity."
+    },
+    "experience-title": {
+      "pt": "Experiência & Interesses",
+      "en": "Experience & Interests"
+    },
+    "experience-text": {
+      "pt": "Tenho trabalhado com linguagens como Go e Rust, explorando microserviços e computação de alto desempenho. Nos meus tempos livres, desenho interfaces minimalistas e escrevo sobre software livre.",
+      "en": "I have worked with languages like Go and Rust, exploring microservices and high-performance computing. In my free time, I design minimalist interfaces and write about free software."
+    },
+    "philosophy-title": {
+      "pt": "Filosofia",
+      "en": "Philosophy"
+    },
+    "philosophy-text": {
+      "pt": "Acredito que menos é mais: sistemas simples são mais robustos, fáceis de manter e encantadores para os utilizadores. A estética clara e funcional é o meu guia.",
+      "en": "I believe that less is more: simple systems are more robust, easier to maintain and enchanting for users. Clear and functional aesthetics is my guide."
+    }
+  },
   "nav": {
     "nav-about": {
       "pt": "Sobre",
