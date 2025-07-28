@@ -22,6 +22,24 @@
   color: #fff;
 }
 
+/* Theme button styling for different themes */
+body.theme-light .theme-btn {
+  color: #007bff;
+}
+
+body.theme-light .theme-btn:hover {
+  color: #0056b3;
+}
+
+body.theme-retro .theme-btn {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+body.theme-retro .theme-btn:hover {
+  color: #000000;
+}
+
 /* Mobile-specific theme button improvements */
 @media (max-width: 768px) {
   .theme-btn {
@@ -39,6 +57,25 @@
   /* Ensure theme button is visible on mobile */
   nav li:last-child {
     margin-right: 0;
+  }
+  
+  /* Mobile theme-specific button styling */
+  body.theme-light .theme-btn {
+    border-color: #007bff;
+    background: rgba(0, 123, 255, 0.1);
+  }
+  
+  body.theme-light .theme-btn:active {
+    background: rgba(0, 123, 255, 0.2);
+  }
+  
+  body.theme-retro .theme-btn {
+    border-color: #0000ff;
+    background: rgba(0, 0, 255, 0.1);
+  }
+  
+  body.theme-retro .theme-btn:active {
+    background: rgba(0, 0, 255, 0.2);
   }
 }
 

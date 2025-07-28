@@ -21,7 +21,109 @@
   <!-- Header Include -->
   <div id="site-header"></div>
   <script>
-    fetch('/header.html').then(r => r.text()).then(html => document.getElementById('site-header').innerHTML = html);
+    // Load shared header with cache busting
+    const cacheBuster = '?v=' + Date.now();
+    fetch('/header.html' + cacheBuster)
+      .then(r => {
+        if (!r.ok) throw new Error('Failed to load header');
+        return r.text();
+      })
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
+        
+        // Initialize theme system after header loads
+        initializeThemeSystem();
+      })
+      .catch(error => {
+        console.error('Header load failed:', error);
+        // Fallback header
+        document.getElementById('site-header').innerHTML = `
+          <header>
+            <a href="/index.html" class="logo">
+              <img src="/images/pt-flag.svg" alt="Bandeira de Portugal" width="24" height="16">
+              <h1 class="site-title">vincentwl.pt</h1>
+            </a>
+            <nav>
+              <ul>
+                <li><a href="/about.html">&gt; Sobre</a></li>
+                <li><a href="/news.html">&gt; Notícias</a></li>
+                <li><a href="/contact.html">&gt; Contacto</a></li>
+                <li><button id="theme-toggle" class="theme-btn">&gt; Theme</button></li>
+              </ul>
+            </nav>
+          </header>
+        `;
+        initializeThemeSystem();
+      });
+      
+    // Mobile-safe theme system
+    function initializeThemeSystem() {
+      const themes = ['theme-dark', 'theme-light', 'theme-retro'];
+      let currentThemeIndex = 0;
+      
+      // Load saved theme or default to dark
+      function loadTheme() {
+        try {
+          const savedTheme = localStorage.getItem('theme');
+          if (savedTheme && themes.includes(savedTheme)) {
+            document.body.className = savedTheme;
+            currentThemeIndex = themes.indexOf(savedTheme);
+          } else {
+            document.body.className = 'theme-dark';
+          }
+        } catch (e) {
+          console.error('Theme load failed:', e);
+          document.body.className = 'theme-dark';
+        }
+      }
+      
+      // Switch to next theme
+      function switchTheme() {
+        try {
+          currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+          const newTheme = themes[currentThemeIndex];
+          document.body.className = newTheme;
+          localStorage.setItem('theme', newTheme);
+          
+          // Update button text based on theme
+          const themeNames = ['Dark', 'Light', 'Retro'];
+          const themeToggle = document.getElementById('theme-toggle');
+          if (themeToggle) {
+            themeToggle.textContent = `> ${themeNames[currentThemeIndex]}`;
+          }
+        } catch (e) {
+          console.error('Theme switch failed:', e);
+        }
+      }
+      
+      // Initialize theme
+      loadTheme();
+      
+      // Add click handler with mobile safeguards
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        // Remove any existing listeners
+        themeToggle.replaceWith(themeToggle.cloneNode(true));
+        const newThemeToggle = document.getElementById('theme-toggle');
+        
+        // Add new listener with mobile-friendly event handling
+        newThemeToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          switchTheme();
+        });
+        
+        // Also add touch events for mobile
+        newThemeToggle.addEventListener('touchstart', function(e) {
+          e.preventDefault();
+          switchTheme();
+        });
+        
+        // Set initial button text
+        const themeNames = ['Dark', 'Light', 'Retro'];
+        newThemeToggle.textContent = `> ${themeNames[currentThemeIndex]}`;
+      }
+    }
   </script>
 
   <main>
