@@ -19,19 +19,22 @@ function applyLanguage(lang) {
   document.documentElement.lang = lang;
   
   const currentPage = getCurrentPage();
-  console.log('Current page:', currentPage, 'Language:', lang);
   
   // Apply page translations
   const pageTranslations = translations[getCurrentPage()] || {};
   for (const [id, text] of Object.entries(pageTranslations)) {
     const element = document.getElementById(id);
     if (element) {
-      // Check if text contains HTML (like links)
-      if (text[lang] && text[lang].includes('<')) {
-        console.log('Setting HTML for', id, ':', text[lang]);
-        element.innerHTML = text[lang];
+      let content = text[lang] || '';
+      
+      // Handle special placeholders for contact page
+      if (id === 'contact-text') {
+        const emailLink = '<a href="mailto:vincent@vincentwl.pt">vincent@vincentwl.pt</a>';
+        const githubLink = '<a href="https://github.com/vincentw2">GitHub</a>';
+        content = content.replace('{email}', emailLink).replace('{github}', githubLink);
+        element.innerHTML = content;
       } else {
-        element.textContent = text[lang] || '';
+        element.textContent = content;
       }
     }
   }

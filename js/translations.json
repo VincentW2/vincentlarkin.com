@@ -47,8 +47,8 @@
       "en": "Contact"
     },
     "contact-text": {
-      "pt": "Envie-me um email para <a href=\"mailto:vincent@vincentwl.pt\">vincent@vincentwl.pt</a> ou siga no <a href=\"https://github.com/vincentw2\">GitHub</a>.",
-      "en": "Send me an email at <a href=\"mailto:vincent@vincentwl.pt\">vincent@vincentwl.pt</a> or follow me on <a href=\"https://github.com/vincentw2\">GitHub</a>."
+      "pt": "Envie-me um email para {email} ou siga no {github}.",
+      "en": "Send me an email at {email} or follow me on {github}."
     }
   },
   "nav": {

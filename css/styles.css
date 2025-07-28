@@ -2,8 +2,8 @@
 
 /* Theme and Language Toggle Buttons */
 .theme-btn, .lang-btn {
-  background: none;
-  border: none;
+  background: none !important;
+  border: none !important;
   color: #00bfff;
   font-family: 'Fira Mono', 'Courier New', monospace;
   font-size: 1.25rem;
@@ -337,6 +337,7 @@ nav ul {
   display: flex;
   align-items: center;
   width: 100%;
+  justify-content: space-between;
 }
 
 nav li {
