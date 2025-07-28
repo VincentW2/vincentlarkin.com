@@ -30,6 +30,34 @@
   margin-left: 0.5rem;
 }
 
+/* Language button active/inactive states */
+.lang-active {
+  color: #00bfff;
+  font-weight: bold;
+}
+
+.lang-inactive {
+  color: #666;
+  font-weight: normal;
+}
+
+body.theme-light .lang-active {
+  color: #007bff;
+}
+
+body.theme-light .lang-inactive {
+  color: #999;
+}
+
+body.theme-retro .lang-active {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+body.theme-retro .lang-inactive {
+  color: #666;
+}
+
 .theme-btn:hover, .lang-btn:hover {
   color: #fff;
 }

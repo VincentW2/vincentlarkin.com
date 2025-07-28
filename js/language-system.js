@@ -50,10 +50,14 @@ function applyLanguage(lang) {
     }
   }
   
-  // Update language button
+  // Update language button with "PT | ENG" format
   const langBtn = document.getElementById('lang-toggle');
   if (langBtn) {
-    langBtn.textContent = lang.toUpperCase();
+    if (lang === 'pt') {
+      langBtn.innerHTML = '<span class="lang-active">PT</span> | <span class="lang-inactive">ENG</span>';
+    } else {
+      langBtn.innerHTML = '<span class="lang-inactive">PT</span> | <span class="lang-active">ENG</span>';
+    }
   }
 }
 
