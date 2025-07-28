@@ -29,11 +29,15 @@
       .then(html => {
         document.getElementById('site-header').innerHTML = html;
         
-        // Add theme button
+        // Add theme and language buttons
         const nav = document.querySelector('nav ul');
         const themeBtn = document.createElement('li');
         themeBtn.innerHTML = '<button id="theme-toggle" class="theme-btn" title="Toggle Theme">🌙</button>';
         nav.appendChild(themeBtn);
+        
+        const langBtnLi = document.createElement('li');
+        langBtnLi.innerHTML = '<button id="lang-toggle" class="lang-btn" title="Toggle Language">PT</button>';
+        nav.appendChild(langBtnLi);
         
         // Initialize theme system
         const themes = ['theme-dark', 'theme-light', 'theme-retro'];
@@ -50,11 +54,18 @@
         
         document.getElementById('theme-toggle').addEventListener('click', switchTheme);
         document.getElementById('theme-toggle').textContent = themeIcons[currentThemeIndex];
+        
+        // Initialize language button
+        const langBtn = document.getElementById('lang-toggle');
+        if (langBtn) {
+          langBtn.addEventListener('click', switchLanguage);
+          langBtn.textContent = currentLang.toUpperCase();
+        }
       });
   </script>
 
   <main>
-    <h2>Arquivo de Notícias</h2>
+    <h2 id="news-title">Loading...</h2>
     <ul class="news-list">
       <li>
         <a href="articles/trade-war-breakthrough.html">&gt; Chinese finance ministry official says 'optimistic' on trade war breakthrough</a> — Oct 10, 2018
@@ -92,5 +103,8 @@
       .then(response => response.text())
       .then(html => document.getElementById('site-footer').innerHTML = html);
   </script>
+  
+  <!-- Language System -->
+  <script src="/js/language-system.js"></script>
 </body>
 </html>

@@ -35,6 +35,22 @@
       "en": "I believe that less is more: simple systems are more robust, easier to maintain and enchanting for users. Clear and functional aesthetics is my guide."
     }
   },
+  "news": {
+    "news-title": {
+      "pt": "Arquivo de Notícias",
+      "en": "News Archive"
+    }
+  },
+  "contact": {
+    "contact-title": {
+      "pt": "Contacto",
+      "en": "Contact"
+    },
+    "contact-text": {
+      "pt": "Envie-me um email para <a href=\"mailto:vincent@vincentwl.pt\">vincent@vincentwl.pt</a> ou siga no <a href=\"https://github.com/vincentw2\">GitHub</a>.",
+      "en": "Send me an email at <a href=\"mailto:vincent@vincentwl.pt\">vincent@vincentwl.pt</a> or follow me on <a href=\"https://github.com/vincentw2\">GitHub</a>."
+    }
+  },
   "nav": {
     "nav-about": {
       "pt": "Sobre",

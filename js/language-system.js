@@ -23,7 +23,12 @@ function applyLanguage(lang) {
   for (const [id, text] of Object.entries(pageTranslations)) {
     const element = document.getElementById(id);
     if (element) {
-      element.textContent = text[lang];
+      // Check if text contains HTML (like links)
+      if (text[lang].includes('<')) {
+        element.innerHTML = text[lang];
+      } else {
+        element.textContent = text[lang];
+      }
     }
   }
   
