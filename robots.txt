@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Allow crawling of main pages
+Allow: /index.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /news.html
+
+# Allow crawling of articles
+Allow: /articles/
+
+# Allow crawling of CSS and JS for proper rendering
+Allow: /css/
+Allow: /js/
+
+# Allow crawling of images (for SEO and rich snippets)
+Allow: /images/
+
+# Disallow crawling of error pages
+Disallow: /error/
+
+# Sitemap location (pending)
+# Sitemap: https://vincentwl.pt/sitemap.xml
+
+# If Christ has died for my sin, I cannot trifle with the evil that killed my best friend.
+# Lam 3:39 Why should a living man complain, a man, about the punishment of his sins?
+# Lam 3:40 Let us test and examine our ways, and return to the LORD!
