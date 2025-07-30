@@ -31,11 +31,11 @@
         // Add theme and language buttons
         const nav = document.querySelector('nav ul');
         const themeBtn = document.createElement('li');
-        themeBtn.innerHTML = '<button id="theme-toggle" class="theme-btn" title="Toggle Theme">🌙</button>';
+        themeBtn.innerHTML = '<button type="button" id="theme-toggle" class="theme-btn" title="Toggle Theme">🌙</button>';
         nav.appendChild(themeBtn);
         
         const langBtnLi = document.createElement('li');
-        langBtnLi.innerHTML = '<button id="lang-toggle" class="lang-btn" title="Toggle Language"><span class="lang-active">PT</span> | <span class="lang-inactive">ENG</span></button>';
+        langBtnLi.innerHTML = '<button type="button" id="lang-toggle" class="lang-btn" title="Toggle Language"><span class="lang-active">PT</span> | <span class="lang-inactive">ENG</span></button>';
         nav.appendChild(langBtnLi);
         
         // Initialize theme system
