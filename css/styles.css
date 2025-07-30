@@ -507,15 +507,19 @@ body.theme-retro .profile-img {
   border-radius: 8px;
   background: rgba(77, 166, 255, 0.05);
   max-width: 400px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 }
 
 .monthly-image {
   max-width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
 }
 
 .image-caption {
@@ -551,11 +555,13 @@ body.theme-retro .image-caption {
 @media (max-width: 768px) {
   .monthly-image-container {
     max-width: 90%;
+    width: 90%;
     margin: 1rem auto;
     padding: 0.5rem;
   }
   
   .monthly-image {
     max-width: 100%;
+    width: 100%;
   }
 }
