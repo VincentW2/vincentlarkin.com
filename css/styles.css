@@ -495,3 +495,67 @@ body.theme-retro .profile-img {
   margin-top: 2rem;
   font-size: 1.5rem;
 }
+
+/* Monthly Image Container */
+.monthly-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 1rem;
+  border: 2px solid #4da6ff;
+  border-radius: 8px;
+  background: rgba(77, 166, 255, 0.05);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.monthly-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #00bfff;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Theme-specific styling for monthly image */
+body.theme-light .monthly-image-container {
+  border-color: #007bff;
+  background: rgba(0, 123, 255, 0.05);
+}
+
+body.theme-light .image-caption {
+  color: #007bff;
+}
+
+body.theme-retro .monthly-image-container {
+  border: none;
+  background: #f0f0f0;
+  box-shadow: 2px 2px 0 #000;
+}
+
+body.theme-retro .image-caption {
+  color: #000000;
+  text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .monthly-image-container {
+    max-width: 90%;
+    margin: 1rem auto;
+    padding: 0.5rem;
+  }
+  
+  .monthly-image {
+    max-width: 100%;
+  }
+}
